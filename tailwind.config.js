@@ -1,9 +1,15 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {imnpx tailwindcss init -p
+port('tailwindcss').Config} */
 module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{html,js}",
   ],
   theme: {
     extend: {
@@ -14,5 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

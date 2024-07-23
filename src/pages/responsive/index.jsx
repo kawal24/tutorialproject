@@ -22,13 +22,31 @@ const Responsiveui = () => {
         <div className=" w-[20%] h-[10vh] md:w-[50%] md:mr-10 border px-2 md:tex-[12px] ">
           Enquiry for:
         </div>
-        <div
-          className="border mr-6 lg:hidden"
-          onClick={() => setIsButton(!isbutton)}
-        >
-          ...
+
+        <div className="md:hidden">
+          <Popover
+            className="md:mt-0 lg:mb-1"
+            placement="buttonLeeft"
+            content={
+              <div className=" lg:hidden  gap-2 ">
+                <button className="border md:text-[12px] md:w-[100%] px-5  rounded-xl bg-black text-white">
+                  View Lead
+                </button>
+                <button className="border px-8 md:text-[12px] md:w-[30%] md:flex justify-center items-center rounded-xl bg-pink-500 text-white">
+                  Edit
+                </button>
+              </div>
+            }
+          >
+            <div
+              className="border mr-6 lg:hidden"
+              onClick={() => setIsButton(!isbutton)}
+            >
+              ...
+            </div>
+          </Popover>
         </div>
-        <div className="border ">
+        {/* <div className="border ">
           {isbutton && (
             <div className=" lg:hidden  gap-2 ">
               <button className="border md:text-[12px] md:w-[100%] px-5  rounded-xl bg-black text-white">
@@ -39,7 +57,7 @@ const Responsiveui = () => {
               </button>
             </div>
           )}
-        </div>
+        </div> */}
         {/* <div className=" bg-red-500 " onClick={() => setIsButton(!isbutton)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
